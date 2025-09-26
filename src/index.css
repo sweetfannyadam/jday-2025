@@ -1,0 +1,83 @@
+/* 1. Define CSS variables for your SVGs to use */
+:root {
+  --color-ink: #4a4a4a;
+  --color-terracotta: #e07a5f;
+  /* Add any other colors your SVGs need */
+}
+
+/* 2. Inject Tailwind's styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. (Optional but recommended) Set a default body background */
+body {
+  background-color: #f8f5f0; /* This is your 'background' color */
+}
+
+.sketch-map {
+  /* This targets any path/shape inside your SVG */
+  & * {
+    fill: var(--color-ink); /* You can change this to terracotta or blue! */
+  }
+  opacity: 0.1; /* Makes the maps very faint and subtle */
+  pointer-events: none; /* Prevents the map from being clickable */
+}
+
+/* styles.css or your global stylesheet */
+.bg-paper {
+  background-color: #fdfaf6; /* Light cream paper tone */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 100% 2rem; /* Line every 2rem */
+}
+
+.stamp {
+  clip-path: polygon(
+    5% 0%,
+    10% 5%,
+    15% 0%,
+    20% 5%,
+    25% 0%,
+    30% 5%,
+    35% 0%,
+    40% 5%,
+    45% 0%,
+    50% 5%,
+    55% 0%,
+    60% 5%,
+    65% 0%,
+    70% 5%,
+    75% 0%,
+    80% 5%,
+    85% 0%,
+    90% 5%,
+    95% 0%,
+    100% 5%,
+    100% 95%,
+    95% 100%,
+    90% 95%,
+    85% 100%,
+    80% 95%,
+    75% 100%,
+    70% 95%,
+    65% 100%,
+    60% 95%,
+    55% 100%,
+    50% 95%,
+    45% 100%,
+    40% 95%,
+    35% 100%,
+    30% 95%,
+    25% 100%,
+    20% 95%,
+    15% 100%,
+    10% 95%,
+    5% 100%,
+    0% 95%,
+    0% 5%
+  );
+}
